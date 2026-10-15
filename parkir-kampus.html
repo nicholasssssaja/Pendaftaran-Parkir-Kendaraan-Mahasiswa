@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pendaftaran Parkir Kendaraan Mahasiswa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Badge fixed: tetap terlihat walau halaman di-scroll -->
+  <div class="badge-stnk" role="note">
+    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3 2 21h20L12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v5M12 18v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    Wajib Bawa STNK!
+  </div>
+
+  <header class="hero">
+    <h1>Pendaftaran Parkir Kendaraan Mahasiswa</h1>
+    <p>Registrasi kendaraan untuk akses parkir kampus.</p>
+  </header>
+
+  <main class="layout">
+    <!-- TABEL TARIF -->
+    <section class="card" aria-labelledby="judul-tarif">
+      <h2 id="judul-tarif">Tarif Parkir</h2>
+      <table>
+        <thead>
+          <tr><th>Jenis</th><th>Tarif</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Motor</td><td>Rp 2.000 / masuk</td></tr>
+          <tr><td>Mobil</td><td>Rp 5.000 / masuk</td></tr>
+          <tr><td>Inap</td><td>Rp 20.000 / malam</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- FORM PENDAFTARAN -->
+    <section class="card" aria-labelledby="judul-daftar">
+      <h2 id="judul-daftar">Daftar Parkir</h2>
+      <form id="form-parkir" novalidate>
+        <label for="plat">Nomor Polisi</label>
+        <input type="text" id="plat" name="plat" placeholder="B 1234 XYZ" maxlength="12" autocomplete="off">
+        <small id="hint-plat" class="hint">Wajib diisi</small>
+
+        <label for="jenis">Jenis Kendaraan</label>
+        <select id="jenis" name="jenis">
+          <option>Motor</option>
+          <option>Mobil</option>
+        </select>
+
+        <button type="submit" class="btn-daftar">Daftarkan</button>
+      </form>
+
+      <!-- Pratinjau plat nomor -->
+      <div class="plat" aria-live="polite">
+        <span id="plat-teks">B 1234 XYZ</span>
+        <span class="plat-masa" id="plat-masa">09 · 29</span>
+      </div>
+
+      <p id="status" class="status" role="status" hidden></p>
+    </section>
+  </main>
+
+  <footer>Simpan STNK asli dan tunjukkan saat pemeriksaan di gerbang.</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
